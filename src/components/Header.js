@@ -81,7 +81,9 @@ const Header = () => {
 			<HeaderBlock>
 				<Wrapper>
 					<div className="left">
-						<img src={logo} className="logo" alt="" />
+						<a href="./App">
+							<img src={logo} className="logo" alt="" />
+						</a>
 						<a href="about 골방">골방.dev</a>
 						<a href="로그인 페이지">로그인</a>
 					</div>
