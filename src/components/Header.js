@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Responsive from "./Resoponsive"
+import Responsive from "./Responsive"
 import logo from "../images/logo.png"
 import { AiOutlineSearch } from "react-icons/ai"
 
@@ -40,7 +40,6 @@ const Wrapper = styled(Responsive)`
 	}
 	.right {
 		display: flex;
-		margin-right: 1.5rem;
 		align-items: center;
 		AiOutlineSearch {
 			margin-right: 0.2rem;
@@ -75,9 +74,7 @@ const Wrapper = styled(Responsive)`
 		}
 	}
 `
-const Spacer = styled.div`
-	height: 4rem;
-`
+
 const Header = () => {
 	return (
 		<div>
@@ -89,7 +86,7 @@ const Header = () => {
 						<a href="로그인 페이지">로그인</a>
 					</div>
 					<div className="right">
-						<AiOutlineSearch />
+						<AiOutlineSearch size="1.5rem" />
 						<form name="fr" onsubmit="">
 							{
 								//검색
@@ -99,7 +96,6 @@ const Header = () => {
 					</div>
 				</Wrapper>
 			</HeaderBlock>
-			<Spacer />
 		</div>
 	)
 }
