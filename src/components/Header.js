@@ -59,7 +59,7 @@ const Wrapper = styled(Responsive)`
 			border-radius: 0;
 
 			height: 1.6rem;
-			width: 3rem;
+			width: 2rem;
 			transition: width 0.35s linear;
 			&::-webkit-input-placeholder {
 				color: white;
