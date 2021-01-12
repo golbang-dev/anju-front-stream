@@ -16,8 +16,8 @@ const ResponsiveBlock = styled.div`
 	}
 `
 
-const Resoponsive = ({ children, ...rest }) => {
+const Responsive = ({ children, ...rest }) => {
 	return <ResponsiveBlock {...rest}>{children}</ResponsiveBlock>
 }
 
-export default Resoponsive
+export default Responsive
