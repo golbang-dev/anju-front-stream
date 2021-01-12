@@ -43,7 +43,7 @@ const Search = styled.div`
 	padding-right: 0;
 	margin-top: 1rem;
 	width: ${(props) => props.width};
-	border-radius: 50px;
+	border-radius: 25ㅎpx;
 	transition: width 0.6s linear;
 	.SearchBar {
 		font-size: 2rem;
