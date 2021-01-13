@@ -5,6 +5,7 @@ import logo from "../images/logo.png"
 import { AiOutlineSearch } from "react-icons/ai"
 
 const HeaderBlock = styled.div`
+	margin: 0;
 	position: fixed;
 	width: 100%;
 	background: #00000047 0% 0% no-repeat padding-box;
@@ -26,16 +27,16 @@ const Wrapper = styled(Responsive)`
 		a {
 			text-decoration: none;
 			color: white;
-			margin-left: 1.5rem;
+			margin-right: 1.5rem;
 			&:hover {
 				color: #fde8c4;
 			}
-		}
-
-		.logo {
-			width: 4.5rem;
-			height: 3rem;
-			padding-right: 0;
+			.logo {
+				width: 4.5rem;
+				height: 3rem;
+				margin-top: 0.5rem;
+				padding-right: 0;
+			}
 		}
 	}
 	.right {

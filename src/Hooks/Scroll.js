@@ -1,0 +1,45 @@
+import { useRef, useLayoutEffect } from "react"
+//https://dev.to/n8tb1t/tracking-scroll-position-with-react-hooks-3bbj
+const isBrowser = typeof window !== `undefined` // check if the DOM is ready
+
+// get current scroll position
+function getScrollPosition({ element, useWindow }) {
+	if (!isBrowser) return { x: 0, y: 0 } // 브라우저가 아니면 default 값으로 x:0 y:0 반환
+
+	//check if the user requested the scroll position of the entire page or any specific element inside it.
+	const target = element ? element.current : document.body // useRef로 생성된
+	const position = target.getBoundingClientRect()
+
+	return useWindow
+		? { x: window.scrollX, y: window.scrollY }
+		: { x: position.left, y: position.top }
+}
+
+export function useScrollPosition(effect, deps, element, useWindow, wait) {
+	const position = useRef(getScrollPosition({ useWindow }))
+
+	let throttleTimeout = null
+
+	const callBack = () => {
+		const currPos = getScrollPosition({ element, useWindow })
+		effect({ prevPos: position.current, currPos })
+		position.current = currPos
+		throttleTimeout = null
+	}
+
+	useLayoutEffect(() => {
+		const handleScroll = () => {
+			if (wait) {
+				if (throttleTimeout === null) {
+					throttleTimeout = setTimeout(callBack, wait)
+				}
+			} else {
+				callBack()
+			}
+		}
+
+		window.addEventListener("scroll", handleScroll)
+
+		return () => window.removeEventListener("scroll", handleScroll)
+	}, deps)
+}

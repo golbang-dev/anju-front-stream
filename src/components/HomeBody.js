@@ -6,11 +6,12 @@ import { AiOutlineSearch } from "react-icons/ai"
 
 const ImageWrapper = styled.div`
 	width: 100%;
-	padding-bottom: 66%;
+	height: 66vw;
 	background-image: url(${homeBackground});
 	background-size: 100%;
 	background-repeat: no-repeat;
 	position: absolute;
+
 	top: 0;
 	left: 0;
 	z-index: -1;
@@ -18,7 +19,7 @@ const ImageWrapper = styled.div`
 
 const IntroductionWrapper = styled(Responsive)`
 	padding-left: 0.8rem;
-	margin-top: 8rem;
+	margin-top: 9rem;
 	display: flex;
 	font-family: DXPnM;
 	font-size: 3rem;
@@ -43,7 +44,7 @@ const Search = styled.div`
 	padding-right: 0;
 	margin-top: 1rem;
 	width: ${(props) => props.width};
-	border-radius: 25ㅎpx;
+	border-radius: 25px;
 	transition: width 0.6s linear;
 	.SearchBar {
 		font-size: 2rem;
@@ -67,45 +68,38 @@ const Search = styled.div`
 	}
 `
 
-const ExplorerListWrapper = styled(Responsive)`
-	height: auto;
-`
-
 const HomeBody = () => {
 	const [searchBarWidth, setSearachBarWidth] = useState("13rem")
 
 	return (
-		<div>
-			<ImageWrapper>
-				<IntroductionWrapper>
-					대충 아무말
-					<br />
-					다들 글을 써보세요
-					<br />
-					무야호~
-					<br />
-					그만큼 신난다는 거지~
-				</IntroductionWrapper>
-				<SearchBoxWrapper>
-					<Search width={searchBarWidth}>
-						<AiOutlineSearch size="2rem" />
-						<form name="fr" onsubmit="">
-							{
-								//검색
-							}
-							<input
-								className="SearchBar"
-								type="text"
-								placeholder="상세 검색"
-								onFocus={() => setSearachBarWidth("30rem")}
-								onBlur={() => setSearachBarWidth("13rem")}
-							/>
-						</form>
-					</Search>
-				</SearchBoxWrapper>
-			</ImageWrapper>
-			<ExplorerListWrapper></ExplorerListWrapper>
-		</div>
+		<ImageWrapper>
+			<IntroductionWrapper>
+				대충 아무말
+				<br />
+				다들 글을 써보세요
+				<br />
+				무야호~
+				<br />
+				그만큼 신난다는 거지~
+			</IntroductionWrapper>
+			<SearchBoxWrapper>
+				<Search width={searchBarWidth}>
+					<AiOutlineSearch size="2rem" />
+					<form name="fr" onsubmit="">
+						{
+							//검색
+						}
+						<input
+							className="SearchBar"
+							type="text"
+							placeholder="상세 검색"
+							onFocus={() => setSearachBarWidth("30rem")}
+							onBlur={() => setSearachBarWidth("13rem")}
+						/>
+					</form>
+				</Search>
+			</SearchBoxWrapper>
+		</ImageWrapper>
 	)
 }
 
